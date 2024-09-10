@@ -1,0 +1,101 @@
+/* Base Styles */
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #34495e;
+}
+
+/* Button Styles */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Books Section */
+.books-section {
+    padding: 20px;
+    background-color: white;
+    margin: 10px auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    display: none;
+}
+
+.books-section.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+/* Book List */
+.book h3 {
+    color: #2c3e50;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .books-section {
+        max-width: 90%;
+    }
+
+    button {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}

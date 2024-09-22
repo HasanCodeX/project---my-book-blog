@@ -4,22 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>আমার বই ব্লগ</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+        }
+
+        .navbar li {
+            margin: 0 20px; 
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #3498db; 
+        }
+
+        /* Button Styles */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        /* Books Section */
+        .books-section {
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+            transition: all 0.5s;
+        }
+
+        .books-section.active {
+            display: block;
+        }
+
+        .book {
+            margin: 15px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        ul li:hover {
+            background-color: #d5d8dc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header id="header">
+    <header>
         <h1>যে বইগুলি আমি পড়েছি</h1>
         <nav class="navbar">
             <ul>
-                <li><a href="#2020-books" onclick="showBooks('2020')">২০২০</a></li>
-                <li><a href="#2019-books" onclick="showBooks('2019')">২০১৯</a></li>
-                <li><a href="#2018-books" onclick="showBooks('2018')">২০১৮</a></li>
+                <li><a href="#" onclick="showBooks('2020')">২০২০</a></li>
+                <li><a href="#" onclick="showBooks('2019')">২০১৯</a></li>
+                <li><a href="#" onclick="showBooks('2018')">২০১৮</a></li>
             </ul>
         </nav>
         <div class="button-container">
-            <button id="btn-2020" onclick="showBooks('2020')">২০২০ সালে যে বইগুলি পড়েছি</button>
-            <button id="btn-2019" onclick="showBooks('2019')">২০১৯ সালে যে বইগুলি পড়েছি</button>
-            <button id="btn-2018" onclick="showBooks('2018')">২০১৮ সালে যে বইগুলি পড়েছি</button>
+            <button onclick="showBooks('2020')">২০২০ সালে যে বইগুলি পড়েছি</button>
+            <button onclick="showBooks('2019')">২০১৯ সালে যে বইগুলি পড়েছি</button>
+            <button onclick="showBooks('2018')">২০১৮ সালে যে বইগুলি পড়েছি</button>
         </div>
     </header>
 
@@ -53,7 +167,7 @@
         <div class="book">
             <h3>উপন্যাস:</h3>
             <ul>
-                <li><strong>মেটামর্ফোসিস</strong> - একজন মানুষের একটি অস্বাভাবিক উপন্যাস, যিনি জেগে উঠে নিজেকে এক বিশাল পোকায় পরিণত দেখতে পান।</li>
+                <li><strong>মেটামর্ফোসিস</strong> - একজন মানুষের একটি অস্বাভাবিক উপন্যাস।</li>
                 <li><strong>দ্য আউটসাইডার</strong> - অস্তিত্ববাদ এবং বিচ্ছিন্নতার থিমগুলি অনুসন্ধানকারী একটি দার্শনিক উপন্যাস।</li>
                 <li><strong>দ্য অ্যালকেমিস্ট</strong> - একজন পালক ছেলের আধ্যাত্মিক গল্প।</li>
                 <li><strong>দ্য ডা ভিন্সি কোড</strong> - একটি থ্রিলার যা পবিত্র গ্রিলের সাথে সম্পর্কিত একটি ষড়যন্ত্র উন্মোচন করে।</li>
@@ -62,13 +176,13 @@
         <div class="book">
             <h3>নন-ফিকশন:</h3>
             <ul>
-                <li><strong>চাণক্যের কৌশল</strong> - প্রাচীন ভারতীয় রাজনীতিবিদ চাণক্যের কৃতিত্ব দ্বারা একটি রাজনৈতিক পরামর্শ এবং কৌশল বই।</li>
-                <li><strong>স্বামী বিবেকানন্দ</strong> - ভারতীয় সন্ন্যাসী এবং দার্শনিক, যিনি হিন্দুধর্মকে পশ্চিমে প্রবর্তন করার ক্ষেত্রে গুরুত্বপূর্ণ ভূমিকা পালন করেছিলেন, তার জীবনী।</li>
-                <li><strong>ম্যাক্সিম গর্কির জীবনী</strong> - রাশিয়ান লেখক এবং বিপ্লবী, যিনি প্রাথমিক সোভিয়েত ইউনিয়নে একজন প্রভাবশালী ব্যক্তিত্ব ছিলেন, তার জীবনী।</li>
-                <li><strong>মাদার</strong> - একটি আত্মজীবনীমূলক উপন্যাস, যা একটি পরিবারের দারিদ্র্য এবং রাজার রাশিয়ায় নিপীড়নের বিরুদ্ধে সংগ্রামের কথা বর্ণনা করে।</li>
-                <li><strong>ড্রিম ফ্রম মাই ফাদার</strong> - ওবামার প্রাথমিক জীবন এবং কেনিয়া, ইন্দোনেশিয়া এবং যুক্তরাষ্ট্রে বড় হওয়ার অভিজ্ঞতার একটি স্মৃতিচারণ।</li>
+                <li><strong>চাণক্যের কৌশল</strong> - প্রাচীন ভারতীয় রাজনীতিবিদ চাণক্যের কৃতিত্ব।</li>
+                <li><strong>স্বামী বিবেকানন্দ</strong> - ভারতীয় সন্ন্যাসী এবং দার্শনিকের জীবনী।</li>
+                <li><strong>ম্যাক্সিম গর্কির জীবনী</strong> - রাশিয়ান লেখক এবং বিপ্লবী।</li>
+                <li><strong>মাদার</strong> - একটি আত্মজীবনীমূলক উপন্যাস।</li>
+                <li><strong>ড্রিম ফ্রম মাই ফাদার</strong> - ওবামার প্রাথমিক জীবন সম্পর্কে একটি স্মৃতিচারণ।</li>
                 <li><strong>বিশ্বের শ্রেষ্ঠ ১০০ মনীষীর জীবনী</strong> - প্রভাবশালী ঐতিহাসিক ব্যক্তিদের জীবনী সংগ্রহ।</li>
-                <li><strong>বিশ্বের সেরা ১০১ বিজ্ঞানীর জীবনী</strong> - ১০১ বিজ্ঞানীর জীবন এবং সাফল্য সম্পর্কে একটি বই।</li>
+                <li><strong>বিশ্বের সেরা ১০১ বিজ্ঞানীর জীবনী</strong> - ১০১ বিজ্ঞানীর জীবন।</li>
                 <li><strong>ইন্দিরা গান্ধী</strong> - ভারতের প্রাক্তন প্রধানমন্ত্রীর জীবনী।</li>
             </ul>
         </div>
@@ -80,17 +194,31 @@
         <div class="book">
             <h3>উপন্যাস:</h3>
             <ul>
-                <li><strong>হেমারের ওডিসি</strong>: - একটি ক্লাসিক গ্রীক মহাকাব্য, যা ওডিসিউসের ট্রয় যুদ্ধ থেকে বাড়ি ফিরার দীর্ঘ যাত্রার গল্প বর্ণনা করে।</li>
-                <li><strong>মেইন ক্যাম্প</strong>: - একটি বই যা নাৎসি ঘনত্ব শিবিরগুলি সম্পর্কে আলোকপাত করে।</li>
-                <li><strong>প্যারাডাইজ লস্ট</strong>: - একটি মহাকাব্য যা আদম ও হাওয়ার স্বর্গ থেকে পতনের গল্প বর্ণনা করে।</li>
+                <li><strong>হেমারের ওডিসি</strong> - একটি ক্লাসিক গ্রীক মহাকাব্য।</li>
+                <li><strong>মেইন ক্যাম্প</strong> - হিটলারের অন্ধকার ইতিহাস।</li>
+                <li><strong>প্যারাডাইজ লস্ট</strong> - আদম এবং হাওয়ার পতনের কাহিনী।</li>
             </ul>
         </div>
     </section>
 
     <footer>
-        <p>© ২০২৪ আমার বই ব্লগ. সমস্ত অধিকার সংরক্ষিত.</p>
+        <p>&copy; 2024 আমার বই ব্লগ। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script>
+        function showBooks(year) {
+            // Hide all book sections
+            const sections = document.querySelectorAll('.books-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected book section
+            const activeSection = document.getElementById(year + '-books');
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>

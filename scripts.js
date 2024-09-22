@@ -21,3 +21,12 @@ function showBooks(year) {
         }, 100);
     }
 }
+function showBooks(year) {
+    const sections = document.querySelectorAll('.books-section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    const selectedSection = document.getElementById(`${year}-books`);
+    selectedSection.classList.add('active');
+}
